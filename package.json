@@ -1,0 +1,44 @@
+{
+  "name": "Navionics-WebAPI",
+  "version": "0.1.0",
+  "description": "Integration of Navionics WebAPIv2 on Wordpress",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Navionics/??"
+  },
+  "sandbox": {
+    "dir": "/Users/astaniscia/WorkspacePrivato/Wordpress/wordpress_sandbox/site/wp-content/plugins/nwa"
+  },
+  "scripts": {
+    "prestart": "npm  install",
+    "start": "grunt dev",
+    "finalize": "grunt publish"
+  },
+  "keywords": [
+    "WebAPI",
+    "Navionics",
+    "Nautical",
+    "Chart"
+  ],
+  "author": "Odyno (alessandro@staniscia.net)",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Navionics/??/issues"
+  },
+  "homepage": "https://github.com/Navionics/??#readme",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-pot": "^0.3.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-sync": "^0.6.2"
+  }
+}
