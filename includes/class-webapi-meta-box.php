@@ -22,19 +22,23 @@ if ( ! class_exists( 'WebAPI_Meta_Box' ) ) {
 			array(
 				'id' => 'class_name',
 				'label' => 'Class Name',
+				'description' => 'Declares here the name of the style class to be used in the component. <br/> <strong>Remember:</strong> that it must be one word, without any spaces, special characters and lowercase characters.',
 				'type' => 'text',
 			),
 			array(
 				'id' => 'style_content',
 				'label' => 'Cascading Style Sheets',
 				'type' => 'textarea',
+				'description' => 'Use this space to put the style sheet to apply in your WebAPIv2 component.',
 				'rows' => 3,
 			),
 			array(
 				'id' => 'code_content',
 				'label' => 'JavaScript code',
+				'description' => 'Use this space to insert the JavaScript code WebAPIv2.',
 				'type' => 'textarea',
 				'rows' => 10,
+
 			),
 		);
 
@@ -55,7 +59,7 @@ if ( ! class_exists( 'WebAPI_Meta_Box' ) ) {
 			foreach ( $this->screens as $screen ) {
 				add_meta_box(
 					'navionics-webapi',
-					__( 'Navionics WebAPIv2', 'nwa' ),
+					__( '<span class="dashicons dashicons-edit"></span> Create a new WebAPIv2 component', 'nwa' ),
 					array( $this, 'add_meta_box_callback' ),
 					$screen,
 					'normal',
@@ -71,9 +75,12 @@ if ( ! class_exists( 'WebAPI_Meta_Box' ) ) {
 		 */
 		public function add_meta_box_callback( $post ) {
 			wp_nonce_field( 'navionics_webapi_data', 'navionics_webapi_nonce' );
+			echo _('<a href="http://webapiv2.navionics.com/">WebAPIv2</a> allows you to easily add <a href="http://www.navionics.com">Navionics</a> maps to your Wordpress blog. Create a new component, below you\'ll find a forms to build it, copy the shortcode and use it on article or posts... that\'s all!', 'nwa');
+
 			$this->generate_fields( $post );
+
 			printf(
-				"<hr><h2><span class=\"dashicons dashicons-lightbulb\"></span> ".__('Use the%sto add this component to your pages', 'nwa')."</h2>",
+				"<hr><h2><span class=\"dashicons dashicons-info\"></span> ".__('The shortcode to use is %s', 'nwa')."</h2>",
 				'<code>['. $this->short_code .' item='.$post->ID .']</code>'
 			);
 		}
@@ -89,21 +96,23 @@ if ( ! class_exists( 'WebAPI_Meta_Box' ) ) {
 				switch ( $field['type'] ) {
 					case 'textarea':
 						$input = sprintf(
-							'<textarea class="large-text" id="%s" name="%s" rows="%s">%s</textarea>',
+							'<textarea class="large-text" id="%s" name="%s" rows="%s">%s</textarea><span class="description">%s</span>',
 							$field['id'],
 							$field['id'],
 							$field['rows'],
-							$db_value
-						);
+							$db_value,
+							$field['description']
+							);
 						break;
 					default:
 						$input = sprintf(
-							'<input %s id="%s" name="%s" type="%s" value="%s">',
+							'<input %s id="%s" name="%s" type="%s" value="%s"><span class="description">%s</span>',
 							$field['type'] !== 'color' ? 'class="regular-text"' : '',
 							$field['id'],
 							$field['id'],
 							$field['type'],
-							$db_value
+							$db_value,
+							$field['description']
 						);
 				}
 				$output .= $this->row_format( $label, $input );
