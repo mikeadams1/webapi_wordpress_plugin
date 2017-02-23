@@ -11,10 +11,10 @@ Navionics WebAPIv2 WordPress plugin allows you to easily add Navionics maps to y
 
 == Description ==
 
-This plugin allow you to use the Navionics WebAPI v2 in your Wordpress blog.
-You can create a component like Ski or Boating Maps and the full Catalog and you can place into Pages or Blog article with a simple shortcode.
-On Admin panel you'll find a easy forms where you can build your component with the same instructions present on http://webapiv2.navionics.com.
-At the end will be generate a useful shortcode and use it on article or posts... that's all!
+This plugin allows you to use the Navionics WebAPI v2 in your Wordpress blog.
+You can create a map component (for Ski or Boating) and a Full Navionics Products Catalog and visualise them into Pages or Blog article with a simple shortcode.
+On Admin panel you will find simple forms where you can build your component following the same instructions present on http://webapiv2.navionics.com.
+With the above procedure, you will generate the related shortcode to be used in tour article or posts... that's it!
 
 == Installation ==
 
@@ -24,9 +24,9 @@ At the end will be generate a useful shortcode and use it on article or posts...
 * Go to Plugins > Add New.
 * Under Search, type in ’Navionics WebAPIv2’.
 * Click Install Now to install the WordPress Plugin.
-* A popup window will ask you to confirm your wish to install the Plugin.
-* If this is the first time you've installed a WordPress Plugin, enter the FTP login credential information. If you've installed a Plugin before, it will still have the login information.
-* Click Proceed to continue with the installation. The resulting installation screen will list the installation as successful or note any problems during the install.
+* A popup window will ask you to confirm your intent to install the Plugin.
+* If this is the first time you are installing a WordPress Plugin, you will need to enter the FTP login credential information. If you've installed a Plugin before, you will find pre-filled login information.
+* Click Proceed to continue with the installation. The installation screen will show the result of the installation as successful or not and in this case the list of problems during the install.
 * If successful, click Activate Plugin to activate it, or Return to Plugin Installer for further actions.
 
 *Manual method*
