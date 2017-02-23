@@ -1,7 +1,22 @@
+
+var NWA = {};
+
+
+
+
+
 (function( $ ) {
 	'use strict';
+  (function() {
+    NWA.addStyleString = function(str) {
+      var node = document.createElement('style');
+      document.body.appendChild(node);
+      node.innerHTML = str;
+    }
+  }());
 
-	/**
+
+  /**
 	 * All of the code for your public-facing JavaScript source
 	 * should reside in this file.
 	 *
@@ -28,5 +43,6 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+
 
 })( jQuery );

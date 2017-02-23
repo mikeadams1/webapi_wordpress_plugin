@@ -30,6 +30,11 @@
 class Nwa {
 
 	/**
+	 *
+	 */
+	const  SHORT_CODE_NAME = 'nav-webapi';
+
+	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
@@ -119,7 +124,17 @@ class Nwa {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-nwa-public.php';
 
+
+		/**
+		 * The class responsible for the add of Metabox of Navionics Webapi
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-webapi-meta-box.php';
+		new WebAPI_Meta_Box(self::SHORT_CODE_NAME );
+
 		$this->loader = new Nwa_Loader();
+
+
 
 	}
 
@@ -149,12 +164,16 @@ class Nwa {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Nwa_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Nwa_Admin( $this->get_plugin_name(), $this->get_version() , self::SHORT_CODE_NAME );
 
-		add_shortcode('nav-web-api', array($plugin_admin,'manage_shortcode'));
 
+
+		$this->loader->add_action( 'init', $plugin_admin, 'map_post_type', 0 );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+		add_shortcode(self::SHORT_CODE_NAME, array($plugin_admin, 'manage_short_code'));
+
 
 	}
 
@@ -167,10 +186,14 @@ class Nwa {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Nwa_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Nwa_Public( $this->get_plugin_name(), $this->get_version(), self::SHORT_CODE_NAME );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'condition_enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'condition_enqueue_scripts' );
+
 
 	}
 
