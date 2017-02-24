@@ -4,7 +4,7 @@
   "description": "Integration of Navionics WebAPIv2 on Wordpress",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Navionics/??"
+    "url": "git+https://github.com/Navionics/webapi_wordpress_plugin.git"
   },
   "sandbox": {
     "dir": "/Users/astaniscia/WorkspacePrivato/Wordpress/wordpress_sandbox/site/wp-content/plugins/nwa"
@@ -23,9 +23,9 @@
   "author": "Odyno (alessandro@staniscia.net)",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/Navionics/??/issues"
+    "url": "https://github.com/Navionics/webapi_wordpress_plugin.git/issues"
   },
-  "homepage": "https://github.com/Navionics/??#readme",
+  "homepage": "https://github.com/Navionics/webapi_wordpress_plugin.git/#readme",
   "engines": {
     "node": ">= 0.10.0"
   },

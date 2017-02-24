@@ -16,7 +16,7 @@
  * Plugin Name:       Navionics WebAPI
  * Plugin URI:        http://webapiv2.navionics.com
  * Description:       Show Navionics Maps on your Wordpress Site
- * Version:           1.0.0
+ * Version:           0.1.0
  * Author:            Navionics
  * Author URI:        http://www.navionics.com
  * License:           GPL-2.0+
@@ -29,6 +29,9 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+define('NWA_VERSION', '0.1.0');
+
 
 /**
  * The code that runs during plugin activation.

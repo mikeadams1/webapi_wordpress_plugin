@@ -74,7 +74,7 @@ class Nwa {
 	public function __construct() {
 
 		$this->plugin_name = 'nwa';
-		$this->version = '1.0.0';
+		$this->version = NWA_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();

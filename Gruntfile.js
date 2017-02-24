@@ -81,8 +81,8 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             {
-              match: /(Version: \d+\.\d+\.\d+)/,
-              replacement: 'Version: <%= pkg.version %>'
+              match: /( \* Version:           \d+\.\d+\.\d+)/,
+              replacement: ' * Version:           <%= pkg.version %>'
             }
           ]
         },
@@ -94,8 +94,8 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             {
-              match: /('SVT_VER', '\d+\.\d+\.\d+')/,
-              replacement: '\'SVT_VER\', \'<%= pkg.version %>\''
+              match: /('NWA_VERSION', '\d+\.\d+\.\d+')/,
+              replacement: '\'NWA_VERSION\', \'<%= pkg.version %>\''
             }
           ]
         },
