@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-#Peaze of code are thaked by
-# By Mike Jolley, based on work by Barry Kooij ;)
-
-
 # The slug of your WordPress.org plugin
 PLUGIN_SLUG="nwa"
 
@@ -14,9 +10,12 @@ GITHUB_REPO_OWNER="Navionics"
 # GITHUB Repository name
 GITHUB_REPO_NAME="webapi_wordpress_plugin"
 
-# GITHUB tag to use
-GITHUB_TAG_NAME="0.0.0"
 
+if [ -z "$1" ] ; then echo "Please provide the tag name to deploy "; exit 1; fi
+
+# GITHUB tag to use
+GITHUB_TAG_NAME=$1
+VERSION=$GITHUB_TAG_NAME
 
 
 MAINFILE=${PLUGIN_SLUG}.php
@@ -95,10 +94,14 @@ prepare_for_release (){
     # Check version in readme.txt is the same as plugin file after translating both to unix line breaks to work around grep's failure to identify mac line breaks
     NEWVERSION1=`grep "^Stable tag:" README.txt | awk -F' ' '{print $NF}'`
     echo "readme.txt version: $NEWVERSION1"
-    NEWVERSION2=`grep "^Version:" $MAINFILE | awk -F' ' '{print $NF}'`
+    NEWVERSION2=`grep "^ \* Version:" $MAINFILE | awk -F' ' '{print $NF}'`
     echo "$MAINFILE version: $NEWVERSION2"
 
     if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
+
+
+   if [ "$NEWVERSION1" != "$GITHUB_TAG_NAME" ]; then echo "Version don't match with tags, Exiting...."; exit 1; fi
+
 
     echo "Versions match in readme.txt and $MAINFILE. Let's proceed..."
 
@@ -126,9 +129,7 @@ prepare_for_release (){
     rm -f apigen.neon
     rm -f CHANGELOG.txt
     rm -f CONTRIBUTING.md
-
-
-
+    rm -f deploy.sh
 }
 
 
@@ -176,8 +177,7 @@ release_it() {
     # DEPLOY
     echo ""
     echo "Committing to WordPress.org...this may take a while..."
-    echo svn commit -m "Release "${VERSION}", see readme.txt for the changelog." || { echo "Unable to commit."; exit 1; }
-
+    svn commit -m "Release "${VERSION}", see readme.txt for the changelog." || { echo "Unable to commit."; exit 1; }
 
 }
 
@@ -187,12 +187,19 @@ release_it() {
 
 
 
-
+echo "************ [1/7] Check enviroment ************"
 check_env
+echo "************ [2/7] Clean repository space ************"
 clean_repo
+echo "************ [3/7] Get git repository ************"
 prepare_git_repo
+echo "************ [4/7] Get svn repository ************"
 prepare_svn_repo
+echo "************ [5/7] Prepare code for release ************"
 prepare_for_release
+echo "************ [6/7] Release It ************"
 release_it
+echo "************ [7/7] Done Clean Up ************ "
+clean_repo
 
 echo "RELEASER DONE :D"
