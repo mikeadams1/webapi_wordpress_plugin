@@ -3,3 +3,5 @@
 /**/*.coffee   export-ignore
 /deploy.sh     export-ignore
 /node_modules  export-ignore
+Gruntfile.js   export-ignore
+package.json   export-ignore
