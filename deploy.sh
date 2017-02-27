@@ -3,6 +3,7 @@
 # The slug of your WordPress.org plugin
 PLUGIN_SLUG="nwa"
 
+SVN_USER="navionicsdevelopers"
 
 # GITHUB user who owns the repo
 GITHUB_REPO_OWNER="Navionics"
@@ -11,11 +12,17 @@ GITHUB_REPO_OWNER="Navionics"
 GITHUB_REPO_NAME="webapi_wordpress_plugin"
 
 
+
 if [ -z "$1" ] ; then echo "Please provide the tag name to deploy "; exit 1; fi
+
+
 
 # GITHUB tag to use
 GITHUB_TAG_NAME=$1
 VERSION=$GITHUB_TAG_NAME
+
+INTERACTIVE=true
+if [ -z "$2" ] ; then INTERACTIVE=false; fi
 
 
 MAINFILE=${PLUGIN_SLUG}.php
@@ -76,7 +83,7 @@ prepare_svn_repo (){
     if [[ ! -d $TEMP_SVN_REPO ]];
     then
         echo "Checking out WordPress.org plugin repository"
-        svn checkout $SVN_REPO $TEMP_SVN_REPO || { echo "Unable to checkout repo."; exit 1; }
+        svn checkout --username $SVN_USER $SVN_REPO $TEMP_SVN_REPO || { echo "Unable to checkout repo."; exit 1; }
     fi
 }
 
@@ -169,10 +176,15 @@ release_it() {
     echo "Showing SVN status"
     svn status
 
-    # PROMPT USER
-    echo ""
-    read -p "PRESS [ENTER] TO COMMIT RELEASE "${VERSION}" TO WORDPRESS.ORG AND GITHUB"
-    echo ""
+
+    if $INTERACTIVE ; then
+
+        # PROMPT USER
+        echo "";
+        read -p "PRESS [ENTER] TO COMMIT RELEASE "${VERSION}" TO WORDPRESS.ORG AND GITHUB";
+        echo "";
+
+    fi
 
     # DEPLOY
     echo ""

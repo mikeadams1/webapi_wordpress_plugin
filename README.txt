@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Navionics WebAPI v2 ===
 Contributors: navionicsdevelopers, Odyno
 Tags: maps, nautical, navionics, chart
 Requires at least: 4.7.2
