@@ -28,6 +28,8 @@ The **Navionics WebAPIv2 WordPress plugin** is under GPLv2 License and it use th
 
 The **Navionics WebAPIv2 library** is under <a href="http://www.navionics.com/en/webapi-download">Web API Terms of Service</a> and it require one access token. Please refer  <a href="http://webapiv2.navionics.com">Navionics WebAPIv2 site</a>
 
+[![Navionics WebAPIv2 Wordpress Plugin](http://img.youtube.com/vi/1OHA-JDK6QU/0.jpg)](http://www.youtube.com/watch?v=1OHA-JDK6QU "Navionics WebAPIv2 Wordpress Plugin ")
+
 
 == Installation ==
 
