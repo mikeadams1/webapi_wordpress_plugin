@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://www.navionics.com
+ * @link              https://www.navionics.com
  * @since             1.0.0
  * @package           Nwa
  *
  * @wordpress-plugin
  * Plugin Name:       Navionics WebAPI
- * Plugin URI:        http://webapiv2.navionics.com
+ * Plugin URI:        https://webapiv2.navionics.com
  * Description:       Show Navionics Maps on your Wordpress Site
  * Version:           0.1.0
  * Author:            Navionics
- * Author URI:        http://www.navionics.com
+ * Author URI:        https://www.navionics.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       nwa

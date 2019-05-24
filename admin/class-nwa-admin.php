@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       http://www.navionics.com
+ * @link       https://www.navionics.com
  * @since      1.0.0
  *
  * @package    Nwa

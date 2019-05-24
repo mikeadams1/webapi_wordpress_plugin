@@ -3,7 +3,7 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://www.navionics.com
+ * @link       https://www.navionics.com
  * @since      1.0.0
  *
  * @package    Nwa

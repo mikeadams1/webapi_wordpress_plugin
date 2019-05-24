@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       http://www.navionics.com
+ * @link       https://www.navionics.com
  * @since      1.0.0
  *
  * @package    Nwa
@@ -116,14 +116,14 @@ class Nwa_Public {
 		global $post;
 		//print_r($this->short_code);
 		if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, $this->short_code) ) {
-			wp_enqueue_style(  $this->plugin_name.'-navionics-webapi-style' , "//webapiv2.navionics.com/dist/webapi/webapi.min.css", array(), $this->version );
+			wp_enqueue_style(  $this->plugin_name.'-navionics-webapi-style' , "https://webapiv2.navionics.com/dist/webapi/webapi.min.css", array(), $this->version );
 		}
 	}
 
 	public function condition_enqueue_scripts(){
 		global $post;
 		if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, $this->short_code) ) {
-			wp_enqueue_script( $this->plugin_name.'-navionics-webapi-scripts' , '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), $this->version, false );
+			wp_enqueue_script( $this->plugin_name.'-navionics-webapi-scripts' , 'https://webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), $this->version, false );
 		}
 	}
 

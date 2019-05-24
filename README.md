@@ -5,11 +5,11 @@ Navionics WebAPIv2 WordPress plugin allows you to easily add Navionics maps to y
 
 This plugin allows you to use the Navionics WebAPI v2 in your Wordpress blog.
 You can create a map component (for Ski or Boating) and a Full Navionics Products Catalog and visualise them into Pages or Blog article with a simple shortcode.
-On Admin panel you will find simple forms where you can build your component following the same instructions present on http://webapiv2.navionics.com.
+On Admin panel you will find simple forms where you can build your component following the same instructions present on https://webapiv2.navionics.com.
 With the above procedure, you will generate the related shortcode to be used in tour article or posts... that's it!
 
 ### More Information 
-Visit the <a href="http://webapiv2.navionics.com">Navionics WebAPIv2</a> website for documentation, support, and information on getting involved in the project.
+Visit the <a href="https://webapiv2.navionics.com">Navionics WebAPIv2</a> website for documentation, support, and information on getting involved in the project.
 
 There's a [GIT repository](https://github.com/Navionics/webapi_wordpress_plugin) too if you want to contribute a patch... you are welcome!
 
@@ -17,10 +17,10 @@ We have an entire team of  Engineers ready to help you. Ask your questions in th
 
 ### Note 
 * The **Navionics WebAPIv2 WordPress plugin** is under GPLv2 License and it use the library *Navionics WebAPIv2*.
-* The **Navionics WebAPIv2 library** is under <a href="http://www.navionics.com/en/webapi-download">Web API Terms of Service</a> and it require one access token. Please refer  <a href="http://webapiv2.navionics.com">Navionics WebAPIv2 site</a>
+* The **Navionics WebAPIv2 library** is under <a href="https://www.navionics.com/en/webapi-download">Web API Terms of Service</a> and it require one access token. Please refer  <a href="https://webapiv2.navionics.com">Navionics WebAPIv2 site</a>
 
 ## Tutorial
-[![Navionics WebAPIv2 Wordpress Plugin](http://img.youtube.com/vi/1OHA-JDK6QU/0.jpg)](http://www.youtube.com/watch?v=1OHA-JDK6QU "Navionics WebAPIv2 Wordpress Plugin ")
+[![Navionics WebAPIv2 Wordpress Plugin](https://img.youtube.com/vi/1OHA-JDK6QU/0.jpg)](https://www.youtube.com/watch?v=1OHA-JDK6QU "Navionics WebAPIv2 Wordpress Plugin ")
 
 ## Installation
 "Navionics WebAPIv2 WordPress plugin" can be installed using integrated WordPress plugin installer or manually.
@@ -40,7 +40,7 @@ We have an entire team of  Engineers ready to help you. Ask your questions in th
 3. Activate ’Navionics WebAPIv2’ plugin through the ’Plugins’ menu in WordPress.
 
 ### First example and Request Key
-Read more about Examples and 'Navionics WebAPIv2' key activations on our <a href="http://webapiv2.navionics.com/index-api.html">Navionics WebAPIv2</a>.
+Read more about Examples and 'Navionics WebAPIv2' key activations on our <a href="https://webapiv2.navionics.com/index-api.html">Navionics WebAPIv2</a>.
 
 ## Screenshots
 
