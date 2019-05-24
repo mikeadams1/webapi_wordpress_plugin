@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://www.navionics.com
+ * @link       https://www.navionics.com
  * @since      1.0.0
  *
  * @package    Nwa

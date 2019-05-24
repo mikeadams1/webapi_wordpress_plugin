@@ -75,7 +75,7 @@ if ( ! class_exists( 'WebAPI_Meta_Box' ) ) {
 		 */
 		public function add_meta_box_callback( $post ) {
 			wp_nonce_field( 'navionics_webapi_data', 'navionics_webapi_nonce' );
-			echo _('<a href="http://webapiv2.navionics.com/">WebAPIv2</a> allows you to easily add <a href="http://www.navionics.com">Navionics</a> maps to your Wordpress blog. Create a new component, below you\'ll find a forms to build it, copy the shortcode and use it on article or posts... that\'s all!', 'nwa');
+			echo _('<a href="https://webapiv2.navionics.com/">WebAPIv2</a> allows you to easily add <a href="https://www.navionics.com">Navionics</a> maps to your Wordpress blog. Create a new component, below you\'ll find a forms to build it, copy the shortcode and use it on article or posts... that\'s all!', 'nwa');
 
 			$this->generate_fields( $post );
 

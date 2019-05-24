@@ -8,7 +8,7 @@
 <script>
   (function( $ ) {
     'use strict';
-    JNC.setContent("//webapiv2.navionics.com/dist/webapi/images");
+    JNC.setContent("https://webapiv2.navionics.com/dist/webapi/images");
     NWA.addStyleString('.<?php echo $atts['classname']; ?> { <?php echo $atts['css_code']; ?> } ');
     <?php echo $atts['js_code']; ?>
   })( jQuery );
