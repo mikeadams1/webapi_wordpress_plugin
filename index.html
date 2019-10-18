@@ -1,1 +1,19 @@
-
+// The Google Map Engine options
+var gibilterra = new google.maps.LatLng(36.140751,-5.353585);
+var gMapNauticalOptions = {
+    zoom: 14,
+    center: gibilterra,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+// Creation of  Google Map Engine
+var gMapNautical = new google.maps.Map(document.getElementById("nautical-map-container"), gMapNauticalOptions);
+//Navionics NauticalChart
+var navionics_nauticalchart_layer = new JNC.Google.NavionicsOverlay({
+    navKey: "****",
+    chartType: JNC.Google.NavionicsOverlay.CHARTS.NAUTICAL,
+    // Enable Navionics logo with payoff
+    logoPayoff: true,
+    // Since we draw multiple NavionicsOverlay on the same page, we have to pass the id of the div containing every instance
+    divId: 'nautical-map-container'
+});
+gMapNautical.overlayMapTypes.insertAt(0, navionics_nauticalchart_layer);
