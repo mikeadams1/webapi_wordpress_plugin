@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <title>Navionics ChartViewer</title>
+    <link href='/favicon.ico' rel='Shortcut icon'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic' type='text/css' rel='stylesheet'>
+    <link href='/styles/main.min.css?v=2.0.8-7' type='text/css' rel='stylesheet'>
+    <style>
+      * {
+        -moz-box-sizing: border-box;  box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;  padding: 0;  width: 100%;  height: 100%;  font-family: "Roboto", "Arial", "sans-serif";  font-size: 13px;  background-color: #003e7e;
+      }
+      #site-page {
+        height: 100%;  margin: 0;  padding: 0;  position: relative;
+      }
+      #site-header1 {
+        position: absolute;  left: 0;  top: 0;  right: 0;  width: 100%;  z-index: 9999;
+        border-bottom: 1px solid #ffffff;
+      }
+      #site-content-wrapper {
+        height: 100%;  padding-top: 65px;
+      }
+      @media all and (min-width: 1280px) {
+        #site-content-wrapper {
+          padding-top: 65px;
+        }
+      }
+      #site-content {
+        height: 100%;  margin: 0;  padding: 0;  position: relative;  width: auto;
+      }
+      .site-preloader {
+        background: #ffffff;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10000;
+        -moz-transition: opacity .2s ease;
+        -webkit-transition: opacity .2s ease;
+        transition: opacity .2s ease
+      }
+      .site-preloader.fadeOut {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body data-root='/styles/images'>
+    <div id='site-page'>
+      <div id='site-header1'></div>
+      <div id='site-content-wrapper'>
+        <div class='site-adv' id='site-adv'></div>
+        <div id='site-content'>
+          <div class='site-preloader' id='site-preloader'></div>
+        </div>
+      </div>
+      <div id='site-footer'></div>
+    </div>
+    <script src='/js/dws.js?v=2.0.8-7'></script>
+  </body>
+</html>
